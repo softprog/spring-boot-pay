@@ -30,7 +30,7 @@ public class LogFilter implements Filter {
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse)response;
-       resp.setHeader("Access-Control-Allow-Origin", "*.zhugexuetang.com");
+       resp.setHeader("Access-Control-Allow-Origin", "*.*.com");
 
         long start = System.nanoTime();
 

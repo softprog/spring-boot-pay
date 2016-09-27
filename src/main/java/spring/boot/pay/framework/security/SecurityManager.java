@@ -28,7 +28,7 @@ public class SecurityManager {
             if ( arg instanceof HttpServletRequest ) {
                 HttpServletRequest request = (HttpServletRequest) arg;
                 String ip = getClientIP(request);
-                if ( whiteList.contains(ip)) {//192.168不应该写在代码中
+                if ( whiteList.contains(ip)) {
                     return point.proceed();
                 }
                 LOGGER.warn("illegal ip:{} try to visit {}",ip,request.getRequestURI());
@@ -39,7 +39,7 @@ public class SecurityManager {
     }
 
 
-//    @Around("@annotation(xyz.hlj.paycenter.business.security.CheckSignEndpoint)")
+//    @Around("@annotation()")
 //    public Object checkSign(ProceedingJoinPoint point) throws Throwable {
 //        for (Object arg : point.getArgs()) {
 //            if ( arg instanceof HttpServletRequest ) {
