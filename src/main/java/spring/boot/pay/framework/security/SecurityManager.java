@@ -22,7 +22,7 @@ public class SecurityManager {
     //IP白名单
     private Set<String> whiteList = SecurityProperties.getWhiteList();
 
-    @Around("@annotation(zw.app.classquality.pay.framework.security.CheckIpEndpoint)")
+    @Around("@annotation(spring.boot.pay.framework.security.CheckIpEndpoint)")
     public Object checkIP(ProceedingJoinPoint point) throws Throwable {
         for (Object arg : point.getArgs()) {
             if ( arg instanceof HttpServletRequest ) {
