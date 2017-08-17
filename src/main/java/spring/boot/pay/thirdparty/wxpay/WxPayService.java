@@ -1,19 +1,18 @@
 package spring.boot.pay.thirdparty.wxpay;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
-import org.apache.http.conn.ssl.SSLContexts;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.alibaba.fastjson.JSON;
 
 import spring.boot.pay.common.MoneyFormat;
 import spring.boot.pay.common.XmlHelper;
@@ -23,24 +22,7 @@ import spring.boot.pay.config.properties.WxPayProperties;
 import spring.boot.pay.dao.TradeDao;
 import spring.boot.pay.framework.base.PayTask;
 import spring.boot.pay.framework.base.ResultModel;
-import spring.boot.pay.model.OpenIdInfo;
 import spring.boot.pay.model.Trade;
-
-import javax.net.ssl.SSLContext;
-
-import java.awt.datatransfer.StringSelection;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.UnsupportedEncodingException;
-import java.security.KeyStore;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
 
 @Service
 public class WxPayService implements InitializingBean {

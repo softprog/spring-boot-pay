@@ -1,5 +1,10 @@
 package spring.boot.pay.config.bean;
 
+import java.io.FileNotFoundException;
+import java.util.Locale;
+
+import javax.servlet.Filter;
+
 import org.springframework.boot.autoconfigure.web.ErrorController;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -13,10 +18,6 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 import spring.boot.pay.config.dictionary.Constant;
-
-import javax.servlet.Filter;
-import java.io.FileNotFoundException;
-import java.util.Locale;
 
 @Configuration
 public class WebConfiguration {

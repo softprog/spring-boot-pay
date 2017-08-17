@@ -2,7 +2,6 @@ package spring.boot.pay.thirdparty.alipay;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.servlet.ModelAndView;
 
 import spring.boot.pay.config.dictionary.PayType;
 import spring.boot.pay.framework.base.ResultModel;

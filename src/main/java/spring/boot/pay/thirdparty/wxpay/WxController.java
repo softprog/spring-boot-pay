@@ -1,29 +1,27 @@
 package spring.boot.pay.thirdparty.wxpay;
 
+import java.io.PrintWriter;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.SortedMap;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import spring.boot.pay.common.HttpServRequestHelper;
 import spring.boot.pay.common.XmlHelper;
-import spring.boot.pay.config.dictionary.PayType;
 import spring.boot.pay.config.properties.WxPayProperties;
 import spring.boot.pay.framework.base.PayStatus;
 import spring.boot.pay.framework.base.PayTask;
 import spring.boot.pay.framework.base.ResultModel;
 import spring.boot.pay.framework.processor.ProcessorManager;
-import spring.boot.pay.framework.security.CheckIpEndpoint;
 import spring.boot.pay.model.Trade;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.SortedMap;
 
 @Controller
 @SuppressWarnings("unused")

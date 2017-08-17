@@ -1,5 +1,9 @@
 package spring.boot.pay.common.http;
 
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpGet;
@@ -17,11 +21,6 @@ import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 
 import spring.boot.pay.config.dictionary.Constant;
-
-import java.io.UnsupportedEncodingException;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public final class HttpClientHelper {
 
@@ -65,12 +64,7 @@ public final class HttpClientHelper {
 
 		if (!params.isEmpty()) {
 			HttpEntity entity = null;
-			try {
-				entity = new StringEntity(params, charset);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			entity = new StringEntity(params, charset);
 			request.setEntity(entity);
 		}
 		

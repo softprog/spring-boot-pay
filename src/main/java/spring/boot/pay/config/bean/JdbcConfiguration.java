@@ -1,16 +1,15 @@
 package spring.boot.pay.config.bean;
 
-import com.alibaba.druid.pool.DruidDataSource;
-
-import spring.boot.pay.config.properties.JdbcProperties;
+import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+import com.alibaba.druid.pool.DruidDataSource;
 
-import javax.sql.DataSource;
+import spring.boot.pay.config.properties.JdbcProperties;
 
 @Configuration
 public class JdbcConfiguration {

@@ -1,5 +1,19 @@
 package spring.boot.pay.common;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.LoggerFactory;
@@ -11,16 +25,6 @@ import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 
 import spring.boot.pay.config.dictionary.Constant;
-
-import java.awt.image.BufferedImage;
-import java.io.*;
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
-
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletResponse;
 
 public class Util {
 

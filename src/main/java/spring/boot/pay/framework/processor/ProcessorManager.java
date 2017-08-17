@@ -1,19 +1,18 @@
 package spring.boot.pay.framework.processor;
 
-import com.alibaba.fastjson.JSON;
-
-import spring.boot.pay.framework.base.PayTask;
-import spring.boot.pay.framework.base.ResultModel;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSON;
 
-
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.*;
+import spring.boot.pay.framework.base.PayTask;
+import spring.boot.pay.framework.base.ResultModel;
 
 @Component
 public class ProcessorManager implements BeanPostProcessor {

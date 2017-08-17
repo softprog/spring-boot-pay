@@ -1,5 +1,9 @@
 package spring.boot.pay.framework.security;
 
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -8,9 +12,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
 
 import spring.boot.pay.config.properties.SecurityProperties;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.Set;
 
 
 @Configuration

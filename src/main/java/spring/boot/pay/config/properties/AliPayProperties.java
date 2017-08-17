@@ -1,9 +1,6 @@
 package spring.boot.pay.config.properties;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 import spring.boot.pay.common.Util;

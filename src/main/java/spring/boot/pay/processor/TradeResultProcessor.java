@@ -14,7 +14,6 @@ import spring.boot.pay.service.TradeService;
 
 
 @Component
-@SuppressWarnings("unused")
 public class TradeResultProcessor implements Processor<Trade> {
 
     protected Logger logger = LoggerFactory.getLogger(getClass());

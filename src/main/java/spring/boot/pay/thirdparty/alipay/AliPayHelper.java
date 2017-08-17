@@ -1,7 +1,11 @@
 package spring.boot.pay.thirdparty.alipay;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -18,11 +22,6 @@ import org.dom4j.io.SAXReader;
 import spring.boot.pay.common.encrypt.AliMD5;
 import spring.boot.pay.common.http.HttpClientHelper;
 import spring.boot.pay.config.properties.AliPayProperties;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URL;
 
 
 public class AliPayHelper {
