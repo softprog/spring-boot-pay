@@ -46,11 +46,19 @@
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjlib -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjlib</artifactId>
-			<version>1.6.2</version>
-		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjrt</artifactId>
+    <version>1.8.10</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjtools -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactId>aspectjtools</artifactId>
+    <version>1.8.10</version>
+</dependency>
+
 		<!-- other -->
 		<dependency>
 			<groupId>org.jdom</groupId>

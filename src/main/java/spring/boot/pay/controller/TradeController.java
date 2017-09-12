@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import com.sun.xml.internal.messaging.saaj.util.Base64;
 
 import spring.boot.pay.common.Util;
@@ -43,8 +45,15 @@ public class TradeController {
 	/**
 	 * 解析支付url得到支付请求信息 进行支付
 	 */
-	@RequestMapping(value = "/pay/trade", method = RequestMethod.POST)
+	@RequestMapping(value = "/pay/trade", method = RequestMethod.GET)
 	@ResponseBody
+   @HystrixCommand(fallbackMethod="fallback",commandProperties = {
+          @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "500"),
+          
+       },
+		   threadPoolProperties = {
+				   @HystrixProperty(name = "maxQueueSize", value = "0")
+		   })
 	// @CheckIpEndpoint
 	public String trade(HttpServletRequest request, HttpServletResponse response, String data) throws Exception {
 
@@ -64,7 +73,9 @@ public class TradeController {
 		return ProtectData.AESEncrypt(Constant.AESkeyStr, toSuccessJson(processResult.getBody().toString()));
 
 	}
-	
+	public String fallback(HttpServletRequest request, HttpServletResponse response, String data){
+	        return "系统已达到最大上限.";
+	    }
 	/**
 	 * 解析支付url得到支付请求信息 进行支付
 	 */

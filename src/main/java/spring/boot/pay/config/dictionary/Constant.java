@@ -7,5 +7,5 @@ public class Constant {
 
     public static final String CHARSET = "UTF-8";
     //来自于微信服务号产生的key
-    public static final String AESkeyStr = "";
+    public static final String AESkeyStr = "qazwsxed";
 }
